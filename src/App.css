@@ -1,0 +1,11 @@
+.light {
+    background-color: white;
+}
+
+.dark {
+    background-color: #121212;
+}
+
+.dark h1 {
+    color: white;
+}

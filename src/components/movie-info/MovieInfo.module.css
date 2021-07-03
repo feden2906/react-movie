@@ -1,0 +1,15 @@
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.item a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: darkcyan;
+    font-size: 25px;
+}
+

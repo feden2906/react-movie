@@ -1,0 +1,55 @@
+
+.action {
+    background-color: red;
+}
+
+.horror {
+    background-color: darkblue;
+}
+
+.crime {
+    background-color: darkred;
+}
+
+.adventure {
+    background-color: greenyellow;
+}
+
+.history {
+    background-color: darkslategray;
+}
+
+.western {
+    background-color: saddlebrown;
+}
+
+
+.fantasy, .mystery, .sciencefiction {
+    background-color: lightseagreen;
+}
+
+.war {
+    background-color: grey;
+}
+
+.thriller, .documentary, .drama {
+    background-color: lightslategray;
+}
+
+.comedy {
+
+    background-color: orange;
+}
+
+.family {
+    background-color: tomato;
+}
+
+.animation {
+    background-color: cornflowerblue;
+}
+
+
+.romance, .music, tvmovie {
+    background-color: lightcoral;
+}
