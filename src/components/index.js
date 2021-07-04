@@ -7,4 +7,5 @@ export * from './movie-list-card';
 export * from './movies-list';
 export * from './poster-preview';
 export * from './stars-rating';
-export * from './theme-button'
+export * from './theme-button';
+export * from './pagination';

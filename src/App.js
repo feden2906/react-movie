@@ -7,6 +7,7 @@ import {MovieInfo} from "./components";
 import {getGenres} from "./services";
 import {Header} from "./components";
 import {ThemeButton} from "./components";
+import {Pagination} from "./components";
 
 //todo Зробити isLoading загрузку, пагінацію, додати фільтри фільмів, сторінку Home і нормально застилізувати
 
@@ -14,9 +15,29 @@ function App() {
 
     const [moviesList, setMoviesList] = useState([]);
     const [theme, setTheme] = useState('light');
+    let [currPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(null);
 
-    const getAllData = async (value) => {
-        const [{results}, {genres}] = await Promise.all([value ? getMovies(value) : getMoviesList(), getGenres()]);
+    const nextPage = () => {
+        setCurrentPage(++currPage);
+    };
+
+    const prevPage = () => {
+        setCurrentPage(--currPage);
+    };
+
+    const getAllData = async (value, currPage) => {
+        const [{
+            page,
+            results,
+            total_pages
+        }, {genres}] = await Promise.all([value ? getMovies(value, currPage) : getMoviesList(currPage), getGenres()]);
+
+        setTotalPages(total_pages);
+        if (currPage === page) {
+            setCurrentPage(page);
+        }
+
         const moviesWithGenres = results.map((movie) => {
             movie.movieGenres = [];
             genres.find((genre) => {
@@ -28,13 +49,15 @@ function App() {
             });
             return movie;
         });
+
+
         setMoviesList(moviesWithGenres);
     }
 
 
     useEffect(() => {
-        getAllData();
-    }, []);
+        getAllData('', currPage);
+    }, [currPage]);
     const toggleTheme = () => theme === 'light' ? setTheme('dark') : setTheme('light');
 
     return (
@@ -44,9 +67,15 @@ function App() {
             <Switch>
                 <Route path={ `/movies/:id` } component={ MovieInfo }/>
                 <Route path={ `/movies` } render={ (props) =>
-                    <MoviesList theme={ theme } { ...props } moviesList={ moviesList || [] }/> }/>
-            </Switch>
 
+                    <Pagination currPage={ currPage }
+                                totalPages={ totalPages }
+                                nextPage={ nextPage }
+                                prevPage={ prevPage }>
+                        <MoviesList theme={ theme } { ...props } moviesList={ moviesList || [] }/>
+                    </Pagination>
+                }/>
+            </Switch>
         </div>
     );
 }
