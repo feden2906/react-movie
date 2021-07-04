@@ -12,7 +12,6 @@ import {ThemeButton} from "./components/theme-button";
 
 function App() {
 
-
     const [moviesList, setMoviesList] = useState([]);
     const [theme, setTheme] = useState('light');
 
