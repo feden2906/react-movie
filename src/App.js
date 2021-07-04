@@ -27,7 +27,6 @@ function App() {
     };
 
     const getAllData = async (currPage, value) => {
-        debugger;
         const [{
             page,
             results,
