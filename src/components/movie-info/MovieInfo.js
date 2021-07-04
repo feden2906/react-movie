@@ -6,10 +6,12 @@ import styles from './MovieInfo.module.css'
 
 const MovieInfo = () => {
     let [movie, setMovie] = useState(null);
+    
     let {id} = useParams();
     useEffect(() => {
         getMovieDetails(id).then(data => setMovie(data));
     }, [id]);
+
     return (
         movie && <div className={ styles.item }>
             <h2>{ movie.original_title }</h2>
