@@ -1,12 +1,12 @@
 import './App.css';
 import {getMovies, getMoviesList} from "./services";
 import {useEffect, useState} from "react";
-import {MoviesList} from "./components/movies-list";
+import {MoviesList} from "./components";
 import {Route, Switch} from "react-router-dom";
-import {MovieInfo} from "./components/movie-info";
+import {MovieInfo} from "./components";
 import {getGenres} from "./services/genres-service";
-import {Header} from "./components/header";
-import {ThemeButton} from "./components/theme-button";
+import {Header} from "./components";
+import {ThemeButton} from "./components";
 
 //todo Зробити isLoading загрузку і пагінацію
 
