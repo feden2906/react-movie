@@ -17,6 +17,7 @@ function App() {
     const [theme, setTheme] = useState('light');
     let [currPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(null);
+    const [searchValue, setSearchValue] = useState('');
 
     const nextPage = () => {
         setCurrentPage(++currPage);
@@ -27,6 +28,9 @@ function App() {
     };
 
     const getAllData = async (currPage, value) => {
+
+        setSearchValue(value);
+
         const [{
             page,
             results,
@@ -57,6 +61,10 @@ function App() {
 
 
     useEffect(() => {
+        if (searchValue) {
+            getAllData(currPage, searchValue);
+            return;
+        }
         getAllData(currPage);
     }, [currPage]);
 
