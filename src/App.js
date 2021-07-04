@@ -31,6 +31,7 @@ function App() {
 
         setSearchValue(value);
 
+
         const [{
             page,
             results,
@@ -38,6 +39,10 @@ function App() {
         }, {genres}] = await Promise.all([value ? getMovies(currPage, value) : getMoviesList(currPage), getGenres()]);
 
         setTotalPages(total_pages);
+
+        if (value && currPage !== page) {
+            setCurrentPage(page);
+        }
 
         if (currPage === page) {
             setCurrentPage(page);
