@@ -3,7 +3,7 @@ import PosterPreview from "../poster-preview/PosterPreview";
 import GenreBadge from "../genre-badge/GenreBadge";
 import StarsRating from "../stars-rating/StarsRating";
 
-const MovieListCard = ({movie, url}) => {
+const MovieListCard = ({theme, movie, url}) => {
     return (
         <div className={ classes.movieItem }>
             <h1>{ movie.title }</h1>
@@ -12,7 +12,7 @@ const MovieListCard = ({movie, url}) => {
                                                     imageUrl={ movie.backdrop_path }
                                                     movieName={ movie.title }/> }
             <GenreBadge genres={ movie.movieGenres }/>
-            <StarsRating movieRaiting={ movie.vote_average }/>
+            <StarsRating theme={ theme } movieRaiting={ movie.vote_average }/>
         </div>
     );
 }

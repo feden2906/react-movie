@@ -47,7 +47,7 @@ function App() {
             <Switch>
                 <Route path={ `/movies/:id` } component={ MovieInfo }/>
                 <Route path={ `/movies` } render={ (props) =>
-                    <MoviesList { ...props } moviesList={ moviesList || [] }/> }/>
+                    <MoviesList theme={ theme } { ...props } moviesList={ moviesList || [] }/> }/>
             </Switch>
 
         </div>
