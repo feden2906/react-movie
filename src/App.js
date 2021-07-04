@@ -18,8 +18,7 @@ function App() {
     const [theme, setTheme] = useState('light');
 
     const getAllData = async (value) => {
-        const [moviesData, {genres}] = await Promise.all([value ? getMovies(value) : getMoviesList(), getGenres()]);
-        const {results} = moviesData;
+        const [{results}, {genres}] = await Promise.all([value ? getMovies(value) : getMoviesList(), getGenres()]);
         const moviesWithGenres = results.map((movie) => {
             movie.movieGenres = [];
             genres.find((genre) => {
