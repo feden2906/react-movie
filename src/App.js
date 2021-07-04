@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {MoviesList} from "./components";
 import {Route, Switch} from "react-router-dom";
 import {MovieInfo} from "./components";
-import {getGenres} from "./services/genres-service";
+import {getGenres} from "./services";
 import {Header} from "./components";
 import {ThemeButton} from "./components";
 
