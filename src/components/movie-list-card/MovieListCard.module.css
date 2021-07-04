@@ -1,6 +1,12 @@
 .movieItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 30%;
     padding: 0 20px;
+    border: 1px solid lightgreen;
+    text-align: center;
 }
 
 img {
