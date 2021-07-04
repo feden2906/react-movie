@@ -8,7 +8,7 @@ import {getGenres} from "./services/genres-service";
 import {Header} from "./components";
 import {ThemeButton} from "./components";
 
-//todo Зробити isLoading загрузку і пагінацію
+//todo Зробити isLoading загрузку і пагінацію і сторінку Home
 
 function App() {
 
