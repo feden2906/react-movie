@@ -57,8 +57,12 @@ function App() {
     return (
         <div className={ theme }>
             { theme === "light" ?
-                <button onClick={ () => {toggleTheme();} }>Night</button>
-                : <button onClick={ () => {toggleTheme();} }>Day</button>
+                <button onClick={ () => {
+                    toggleTheme();
+                } }>Night</button>
+                : <button onClick={ () => {
+                    toggleTheme();
+                } }>Day</button>
             }
             <Header getAllData={ getAllData }/>
             <Switch>
