@@ -10,6 +10,7 @@ export const Search = ({searchFilm}) => {
                    onChange={ ({target: {value}}) => setValue(value) }/>
             <button className={ styles.mkSearchForm__button } onClick={ () => {
                 searchFilm('', value);
+                setValue('');
             } }>Search
             </button>
         </div>
