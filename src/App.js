@@ -5,9 +5,8 @@ import {MoviesList} from "./components/movies-list";
 import {Route, Switch} from "react-router-dom";
 import {MovieInfo} from "./components/movie-info";
 import {getGenres} from "./services/genres-service";
-import 'bootstrap/dist/css/bootstrap.css';
 import {Header} from "./components/header";
-import ThemeButton from "./components/theme-button/ThemeButton";
+import {ThemeButton} from "./components/theme-button";
 
 //todo Зробити isLoading загрузку і пагінацію
 

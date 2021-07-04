@@ -1,6 +1,6 @@
 import styles from './ThemeButton.module.css';
 
-const ThemeButton = ({theme, toggleTheme}) => {
+export const ThemeButton = ({theme, toggleTheme}) => {
     return (
         <div className={ styles.button }>
             <div className={ theme === "light" ? styles.button__dark : styles.button__light }
@@ -12,6 +12,5 @@ const ThemeButton = ({theme, toggleTheme}) => {
 
         </div>
     );
-}
+};
 
-export default ThemeButton;
