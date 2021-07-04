@@ -1,0 +1,17 @@
+.button {
+    position: absolute;
+    right: 50%;
+    top: 0;
+}
+
+.button__light, .button__dark {
+    font-size: 25px;
+}
+
+.button__dark {
+    color: black;
+}
+
+.button__light {
+    color: white;
+}
