@@ -1,20 +1,18 @@
 import React from 'react';
 import {Badge} from 'reactstrap';
-import './GenreBadge.css';
+import styles from './GenreBadge.module.css';
 
 export const GenreBadge = ({genres}) => {
-    return (
-        genres ?
-            <div>
-                {
-                    genres.map((genre) => {
-                        return <Badge key={ genre.id }
-                                      className={ genre.name
-                                          .replaceAll(' ', '')
-                                          .toLowerCase() }>{ genre.name }</Badge>
-                    })
-                }
-            </div> : <div></div>
+
+    return (<div className={ styles.container }>
+            { genres && genres.map((genre) => {
+                const genreStyle = genre.name
+                    .replaceAll(' ', '')
+                    .toLowerCase();
+                return <Badge key={ genre.id }
+                              className={ styles[genreStyle] }>{ genre.name }</Badge>
+            }) }
+        </div>
     );
 };
 
