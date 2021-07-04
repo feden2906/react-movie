@@ -9,8 +9,7 @@ export const Search = ({searchFilm}) => {
             <input className={ styles.mkSearchForm__input } type="text" value={ value } placeholder={ `Find movie...` }
                    onChange={ ({target: {value}}) => setValue(value) }/>
             <button className={ styles.mkSearchForm__button } onClick={ () => {
-                searchFilm(value);
-                setValue('');
+                searchFilm('', value);
             } }>Search
             </button>
         </div>

@@ -26,14 +26,16 @@ function App() {
         setCurrentPage(--currPage);
     };
 
-    const getAllData = async (value, currPage) => {
+    const getAllData = async (currPage, value) => {
+        debugger;
         const [{
             page,
             results,
             total_pages
-        }, {genres}] = await Promise.all([value ? getMovies(value, currPage) : getMoviesList(currPage), getGenres()]);
+        }, {genres}] = await Promise.all([value ? getMovies(currPage, value) : getMoviesList(currPage), getGenres()]);
 
         setTotalPages(total_pages);
+
         if (currPage === page) {
             setCurrentPage(page);
         }
@@ -56,14 +58,16 @@ function App() {
 
 
     useEffect(() => {
-        getAllData('', currPage);
+        getAllData(currPage);
     }, [currPage]);
+
+
     const toggleTheme = () => theme === 'light' ? setTheme('dark') : setTheme('light');
 
     return (
         <div className={ theme }>
             <ThemeButton theme={ theme } toggleTheme={ toggleTheme }/>
-            <Header getAllData={ getAllData }/>
+            <Header getAllData={ getAllData } currPage={ currPage }/>
             <Switch>
                 <Route path={ `/movies/:id` } component={ MovieInfo }/>
                 <Route path={ `/movies` } render={ (props) =>
