@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import styles from './StarsRating.module.css';
 
-export default function StarsRating({movieRaiting, theme}) {
+export const StarsRating = ({movieRaiting, theme}) => {
     return (
         <div>
             <Box component="fieldset" mb={ 3 } borderColor="transparent">
@@ -15,5 +15,5 @@ export default function StarsRating({movieRaiting, theme}) {
             </Box>
         </div>
     );
-}
+};
 

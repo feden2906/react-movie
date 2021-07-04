@@ -1,9 +1,9 @@
 import classes from './MovieListCard.module.css';
-import PosterPreview from "../poster-preview/PosterPreview";
-import GenreBadge from "../genre-badge/GenreBadge";
-import StarsRating from "../stars-rating/StarsRating";
+import {PosterPreview} from "../poster-preview";
+import {GenreBadge} from "../genre-badge";
+import {StarsRating} from "../stars-rating";
 
-const MovieListCard = ({theme, movie, url}) => {
+export const MovieListCard = ({theme, movie, url}) => {
     return (
         <div className={ classes.movieItem }>
             <h1>{ movie.title }</h1>
@@ -16,6 +16,6 @@ const MovieListCard = ({theme, movie, url}) => {
             <StarsRating theme={ theme } movieRaiting={ movie.vote_average }/>
         </div>
     );
-}
+};
 
-export default MovieListCard;
+

@@ -1,7 +1,7 @@
 import {useState} from "react";
 import styles from './Search.module.css';
 
-const Search = ({searchFilm}) => {
+export const Search = ({searchFilm}) => {
     const [value, setValue] = useState('');
 
     return (
@@ -15,6 +15,5 @@ const Search = ({searchFilm}) => {
             </button>
         </div>
     );
-}
+};
 
-export default Search;

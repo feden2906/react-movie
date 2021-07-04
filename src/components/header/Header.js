@@ -1,14 +1,12 @@
-import Menu from "../menu/Menu";
-import Search from "../search/Search";
+import {Menu} from "../menu";
+import {Search} from "../search";
 import styles from './Header.module.css';
 
-const Header = ({getAllData}) => {
+export const Header = ({getAllData}) => {
     return (
         <div className={ styles.header }>
             <Menu/>
             <Search searchFilm={ getAllData }/>
         </div>
     );
-}
-
-export default Header;
+};

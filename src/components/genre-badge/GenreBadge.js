@@ -2,7 +2,7 @@ import React from 'react';
 import {Badge} from 'reactstrap';
 import './GenreBadge.css';
 
-const GenreBadge = ({genres}) => {
+export const GenreBadge = ({genres}) => {
     return (
         genres ?
             <div>
@@ -16,6 +16,5 @@ const GenreBadge = ({genres}) => {
                 }
             </div> : <div></div>
     );
-}
+};
 
-export default GenreBadge;

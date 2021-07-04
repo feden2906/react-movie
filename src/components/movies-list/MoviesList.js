@@ -1,7 +1,7 @@
-import MovieListCard from "../movie-list-card/MovieListCard";
+import {MovieListCard} from "../movie-list-card";
 import classes from './MoviesList.module.css';
 
-const MoviesList = ({theme, moviesList, match: {url}}) => {
+export const MoviesList = ({theme, moviesList, match: {url}}) => {
 
     console.log(moviesList);
     return (
@@ -9,6 +9,6 @@ const MoviesList = ({theme, moviesList, match: {url}}) => {
             { moviesList.map((movie) => <MovieListCard theme={ theme } url={ url } key={ movie.id } movie={ movie }/>) }
         </div>
     );
-}
+};
 
-export default MoviesList;
+

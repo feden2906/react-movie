@@ -1,7 +1,7 @@
 import {NavLink} from "react-router-dom";
 import styles from './Menu.module.css';
 
-const Menu = () => {
+export const Menu = () => {
     return (
         <div>
             <nav className={ styles.menu }>
@@ -14,6 +14,6 @@ const Menu = () => {
             </nav>
         </div>
     );
-}
+};
 
-export default Menu;
+

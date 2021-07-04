@@ -1,7 +1,7 @@
 import {imageUrlCreator} from "../../helpers/helpers";
 import {Link} from "react-router-dom";
 
-const PosterPreview = ({movieId, width = 500, url, imageUrl, movieName}) => {
+export const PosterPreview = ({movieId, width = 500, url, imageUrl, movieName}) => {
     const imageSrs = imageUrlCreator(width, imageUrl);
     return (
         url ?
@@ -10,6 +10,4 @@ const PosterPreview = ({movieId, width = 500, url, imageUrl, movieName}) => {
             </Link> :
             <img src={ imageSrs } alt={ movieName }/>
     );
-}
-
-export default PosterPreview;
+};

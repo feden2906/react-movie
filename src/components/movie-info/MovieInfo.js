@@ -1,11 +1,11 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getMovieDetails} from "../../services";
-import PosterPreview from "../poster-preview/PosterPreview";
+import {PosterPreview} from "../poster-preview";
 import styles from './MovieInfo.module.css'
-import GenreBadge from "../genre-badge/GenreBadge";
+import {GenreBadge} from "../genre-badge";
 
-const MovieInfo = () => {
+export const MovieInfo = () => {
     let [movie, setMovie] = useState(null);
 
     let {id} = useParams();
@@ -28,6 +28,5 @@ const MovieInfo = () => {
             </div>
         </div>
     );
-}
+};
 
-export default MovieInfo;
