@@ -17,7 +17,6 @@ const getMovieDetails = async (movieId) => {
 };
 
 const getMovies = async (page, value) => {
-    debugger;
     const {data} = await axiosInstance.get(`/search/movie`, {
         params: {
             query: value,
