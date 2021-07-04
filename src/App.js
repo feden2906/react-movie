@@ -8,7 +8,7 @@ import {getGenres} from "./services";
 import {Header} from "./components";
 import {ThemeButton} from "./components";
 
-//todo Зробити isLoading загрузку і пагінацію і сторінку Home
+//todo Зробити isLoading загрузку, пагінацію, додати фільтри фільмів, сторінку Home і нормально застилізувати
 
 function App() {
 
